@@ -56,7 +56,7 @@ Priority | As a ... | I want to ... | So that I can...
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-#### Use case: Delete person
+#### Use case: UC01 - Delete person
 
 **MSS**
 
@@ -77,12 +77,48 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
+#### Use case: UC02 - Edit Tag
+
+**MSS**
+
+1. User requests to edit existing person
+2. AddressBook finds the person and lists all the details of the person
+3. User requests to edit an existing tag of person to a new tag
+4. AddressBook confirms the change with the user before carrying out the operation
+5. User affirms the change
+6. AddressBook edits the existing tag according to request of person
+Use case ends.
+
+**Extensions**
+
+2a. The list is empty
+
+> Use case ends
+
+3a. The given index is invalid
+
+> 3a1. AddressBook shows an error message
+  Use case lists all persons in the AddressBook
+
+4a. The given tag is invalid
+
+> 4a1. AddressBook shows an error message
+	Use case resumes at step 2
+
+5a. Edit change is not affirmed
+
+> 5a1. Use case resumes at step 2
+
+> 5a2. Use case ends if user chooses not to edit details
+
 ## Appendix C : Non Functional Requirements
 
 1. Should work on any [mainstream OS](#mainstream-os) as long as it has Java 8 or higher installed.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should process user commands within 0.5 second of user input
+6. Should take less than 2 seconds for intial setup
 
 ## Appendix D : Glossary
 
