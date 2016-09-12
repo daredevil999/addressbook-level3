@@ -11,6 +11,13 @@ public class ExitCommand extends Command {
             + "Example: " + COMMAND_WORD;
     public static final String MESSAGE_EXIT_ACKNOWEDGEMENT = "Exiting Address Book as requested ...";
 
+    /**
+     * Returns false as exitCommand does not mutates the data.
+     */
+    public boolean isMutating() {
+        return false;
+    }
+    
     @Override
     public CommandResult execute() {
         return new CommandResult(MESSAGE_EXIT_ACKNOWEDGEMENT);

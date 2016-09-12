@@ -13,7 +13,13 @@ public class ClearCommand extends Command {
 
     public ClearCommand() {}
 
-
+    /**
+     * Returns true as clearCommand mutates the data.
+     */
+    public boolean isMutating() {
+        return true;
+    }
+    
     @Override
     public CommandResult execute() {
         addressBook.clear();

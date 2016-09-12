@@ -16,6 +16,12 @@ public class ListCommand extends Command {
             + "Displays all persons in the address book as a list with index numbers.\n\t"
             + "Example: " + COMMAND_WORD;
 
+    /**
+     * Returns false as listCommand does not mutates the data.
+     */
+    public boolean isMutating() {
+        return false;
+    }
 
     @Override
     public CommandResult execute() {

@@ -29,6 +29,13 @@ public class FindCommand extends Command {
     public Set<String> getKeywords() {
         return new HashSet<>(keywords);
     }
+    
+    /**
+     * Returns false as findCommand does not mutates the data.
+     */
+    public boolean isMutating() {
+        return false;
+    }
 
     @Override
     public CommandResult execute() {

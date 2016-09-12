@@ -23,7 +23,13 @@ public class DeleteCommand extends Command {
     public DeleteCommand(int targetVisibleIndex) {
         super(targetVisibleIndex);
     }
-
+    
+    /**
+     * Returns true as deleteCommand mutates the data.
+     */
+    public boolean isMutating() {
+        return true;
+    }
 
     @Override
     public CommandResult execute() {

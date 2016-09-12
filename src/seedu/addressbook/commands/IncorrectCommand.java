@@ -11,6 +11,13 @@ public class IncorrectCommand extends Command{
     public IncorrectCommand(String feedbackToUser){
         this.feedbackToUser = feedbackToUser;
     }
+    
+    /**
+     * Returns false as incorrectCommand does not mutates the data.
+     */
+    public boolean isMutating() {
+        return false;
+    }
 
     @Override
     public CommandResult execute() {

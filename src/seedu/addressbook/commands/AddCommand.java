@@ -49,6 +49,13 @@ public class AddCommand extends Command {
         );
     }
 
+    /**
+     * Returns true as addCommand mutates the data.
+     */
+    public boolean isMutating() {
+        return true;
+    }
+    
     public AddCommand(Person toAdd) {
         this.toAdd = toAdd;
     }
